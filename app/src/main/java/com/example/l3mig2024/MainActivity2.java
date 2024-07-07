@@ -124,6 +124,7 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
              test = inputText.getText().toString();
 
             if(!test.isEmpty()){
+                
                 data1.add(test);
                 adapter.notifyDataSetChanged();
                 inputText.setText("");
@@ -215,7 +216,7 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
         boolean r = true;
 
 
-        
+
         try {
             FileInputStream fin = openFileInput("entreprises.csv");
             InputStreamReader in = new InputStreamReader(fin);
