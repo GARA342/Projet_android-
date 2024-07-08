@@ -6,7 +6,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+<<<<<<< HEAD
 import android.widget.Toast;
+=======
+>>>>>>> 9e36b5c830fa19fc191b5f37f4b56361db28d620
 
 
 import androidx.activity.EdgeToEdge;
@@ -16,9 +19,12 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+<<<<<<< HEAD
     //Login et Mot de passe de connexion.
     String Login ="christophe";
     String password ="BZFTELUX234";
+=======
+>>>>>>> 9e36b5c830fa19fc191b5f37f4b56361db28d620
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +56,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             EditText textLog = (EditText)findViewById(R.id.logintext);
             EditText TextPass = (EditText)findViewById(R.id.pass);
 
+<<<<<<< HEAD
             String enteredLogin = textLog.getText().toString();
             String enteredPassword = TextPass.getText().toString();
 
@@ -64,6 +71,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
 
 
+=======
+
+            Intent inte =new Intent(this, MainActivity2.class);
+            inte.putExtra("Nom", textLog.getText().toString());
+            inte.putExtra("prenom",  TextPass.getText().toString());
+            startActivity(inte);
+>>>>>>> 9e36b5c830fa19fc191b5f37f4b56361db28d620
 
         }
         if(v.getId() == R.id.supprimer){
