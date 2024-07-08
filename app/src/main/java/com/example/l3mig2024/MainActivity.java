@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 
 import androidx.activity.EdgeToEdge;
@@ -15,16 +16,20 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-
-        //Login et Mot de passe de connexion.
-        String Login ="christophe";
-        String password ="BZFTELUX234";
+    //Login et Mot de passe de connexion.
+    String Login ="christophe";
+    String password ="BZFTELUX234";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+     //   EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-   
+      /*  ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });*/
 
         Button bt1 = (Button)findViewById(R.id.valider);
         bt1.setOnClickListener(this);
@@ -45,8 +50,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             EditText textLog = (EditText)findViewById(R.id.logintext);
             EditText TextPass = (EditText)findViewById(R.id.pass);
 
-
-              String enteredLogin = textLog.getText().toString();
+            String enteredLogin = textLog.getText().toString();
             String enteredPassword = TextPass.getText().toString();
 
             if (enteredLogin.equals(Login) && enteredPassword.equals(password)) {
@@ -58,6 +62,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 //Affichage du message si le mot de passe et login sont incorrecte
                 Toast.makeText(this, "Login ou mot de passe incorrect", Toast.LENGTH_SHORT).show();
             }
+
+
 
         }
         if(v.getId() == R.id.supprimer){
